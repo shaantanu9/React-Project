@@ -6,6 +6,8 @@ function App() {
     <div className='App'>
     <Link to="/body">body</Link>
     <Link to="/">Home</Link>
+    <Link to="/">HomeTown</Link>
+    <Link to="/">HomeGaon</Link>
           <Routes>
             <Route exact path='/body' element={<Body/>}></Route>
             {/* <Route path='/' element={}></Route> */}

@@ -9,30 +9,30 @@ export const BookDetailsPage = () => {
   const {id} = useParams()
 
   
-  const [singleBook,setBooks] = useState()
+  const [singleBook,setBooks] = useState([])
 
 
-  // useEffect(()=>{
-    function getdata(){
+  useEffect(()=>{
+    // function getdata(){
       axios.get(`http://localhost:8080/books/${id}`).then(res=>{setBooks(res.data)})  
-    }getdata()
+    // }getdata()
     
-  // },[id]);
+  },[]);
   
-  console.log(Object.keys(singleBook),"singleBook", singleBook.title)
+  console.log(Object.keys(singleBook))
   // const {title,imageUrl,author,price,description,section,isbnNumber,review} = singleBook
   
   return (
     <>
       <div className="bookContainer">
            <h2 className="title">{singleBook.title}</h2>
-         { /* 
+          
         <img className="image" src={singleBook.imageUrl} alt="#" />
         <div className="author">{singleBook.author}</div>
         <div className="description">{singleBook.description}</div>
         <div className="price">{singleBook.price}</div>
         <div className="section">{singleBook.section}</div>
-        <div className="isbnNumber">{singleBook.isbnNumber}</div> */}
+        <div className="isbnNumber">{singleBook.isbnNumber}</div> 
       </div>
     </>
   );
